@@ -1,0 +1,12 @@
+gcc 파일명.c                       #해당 파일 컴파일하기
+.\실행파일명.exe                    #실행파일 실행하기
+gcc filename1.c -o filename1.exe  #동일한 파일명으로 compile되게 하기
+gcc
+gcc -o hello hello.c              # 단일 파일 컴파일
+gcc -Wall -Wextra -o app main.c   # 경고 표시 강화
+gcc -c util.c                     # 해당 파일을 compile만 하기(linking은 안함)->오브젝트 파일 생성
+gcc main.o util.o -o app          # 링킹
+gcc -E main.c > main.i            # 전처리 결과 보기
+gcc -S main.c                     # 어셈블리 코드 보기
+gcc -g -o debug_app main.c        # 디버깅 정보 포함
+gdb ./debug_app                   # 디버거 실행
