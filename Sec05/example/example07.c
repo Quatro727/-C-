@@ -1,15 +1,4 @@
 /*07. printf() 함수의 변환 지정자들(Conversion Specifiers)*/
-/*
-<printf()함수의 기본적인 사용법>
-printf(제어 문자열, item1, item2,.... )->여기서 item은 변수나 상수 또는 표현식이 될 수 있다.
-Ex)
-int a=1;
-printf("%d+%d=%d",1,a,a+1);
-<형식 지정자(format speifier)>
-%[flags]width][.precison][length]specifier
-Ex)
-printf("%+10.5hi", 256);
-*/
 #include <stdio.h>
 #include <limits.h>
 #include <float.h>
@@ -56,4 +45,28 @@ we owe this to everyone who's not i in this room to try.\n");
     printf("%u\n", n_printed);
 
     return 0;
+    /*
+    printf()함수의 기본적인 사용법
+    printf(제어 문자열, item1, item2,.... )->여기서 item은 변수나 상수 또는 표현식이 될 수 있다.
+        Ex)
+        int a=1;
+        printf("%d+%d=%d",1,a,a+1);
+
+    변환지정자는 일종의 메모리에 있는 데이터들을 해석을 하는 기능을 수행한다.
+        d,i-> 10진 정수
+        u-> 부호 없는 정수
+        o->8진수
+        x,X->16진수
+        f->고정 소수점 실수
+        e,E->지수형 실수
+        g,G->f 또는 e 중 간단한 형태
+        c->문자
+        s->문자열
+        p->포인터 주소
+        %->%기호 자체 의미
+    *형식 지정자(format speifier)>
+    %[flags]width][.precison][length]specifier
+    Ex)
+    printf("%+10.5hi", 256);
+    */
 }
