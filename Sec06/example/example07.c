@@ -12,26 +12,26 @@ int main(){
     seconds=(seconds%3600)%60;
 
     printf("%dhours %dminutes %dseconds\n",hours, minutes, seconds);
+    
+   /*
+    //음수를 나누기나 나머지 연산자로 연산했을 때의 경우
+    int div, mod;
 
+    div=11/5;//2
+    mod=11%5;//1
+    printf("div=%d, mod=%d\n",div, mod);
+
+    div=11/-5;//-2
+    mod=11%-5;//1
+    printf("div=%d, mod=%d\n",div, mod);
+
+    div=-11/5;//-2
+    mod=-11%5;//-1
+    printf("div=%d, mod=%d\n",div, mod);
+
+    div=-11/-5;//2
+    mod=-11%-5;//-1
+    printf("div=%d, mod=%d\n",div, mod);
+    */
     return 0;
 }
-//음수를 나누기나 나머지 연산자로 연산했을 때의 경우
-/*
-int div, mod;
-
-div=11/5;//2
-mod=11%5;//1
-printf("div=%d, mod=%d\n",div, mod);
-
-div=11/-5;//-2
-mod=11%-5;//1
-printf("div=%d, mod=%d\n",div, mod);
-
-div=-11/5;//-2
-mod=-11%5;//-1
-printf("div=%d, mod=%d\n",div, mod);
-
-div=-11/-5;//2
-mod=-11%-5;//-1
-printf("div=%d, mod=%d\n",div, mod);
-*/
