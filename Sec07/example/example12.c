@@ -30,14 +30,14 @@ int main(){
     double dt=(dist_turtle-dist_arch)/speed_arch;//첫 번째 dt: 아킬레우스가 거북이의 출발 지점에 도달하는 데 걸리는 시간
     unsigned i;
 
-    printf("Time=%fs, dt=%fs, Archilleus=%fm, turtle=%fm\n", time, dt, dist_arch, dist_turtle);
+    printf("Time=%lfs, dt=%lfs, Archilleus=%lfm, turtle=%lfm\n", time, dt, dist_arch, dist_turtle);
 
     for(i=0; i<repeat_max; ++i){
         dist_arch+=speed_arch*dt;
         dist_turtle+=speed_turtle*dt;
         time+=dt;
 
-        printf("Time=%fs, dt=%fs, Archilleus=%fm, turtle=%fm\n", time, dt, dist_arch, dist_turtle);
+        printf("Time=%lfs, dt=%fs, Archilleus=%lfm, turtle=%lfm\n", time, dt, dist_arch, dist_turtle);
 
         dt=(speed_turtle*dt)/speed_arch;//거북이가 이동한 거리에 아킬레우스가 도달하는 시간
     }
