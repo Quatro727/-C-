@@ -16,3 +16,4 @@ int main(){
     return 0;
 }
 //L-value와 R-value의 차이점은 메모리 공간을 배정받았는가의 유무이다.
+//단순히 보자면 l-value는 left value이고 r-value는 right value로 파악하면 된다.
