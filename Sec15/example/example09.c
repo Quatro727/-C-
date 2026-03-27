@@ -1,34 +1,40 @@
-/*09. 구조체의 배열을 사용하는 함수*/
+/*09. 익명 구조체*/
 #include <stdio.h>
 
-#define SLEN 101
-
-struct book{
-    char name[SLEN];
-    char author[SLEN];
+struct names
+{
+	char first[20];
+	char last[20];
 };
 
-void print_books(const struct book books[], int n);
+struct person
+{
+	int id;
+	struct names name;	// nested structure member
+};
+//익명 구조체
+struct person2
+{
+	int id;
+	struct { char first[20]; char last[20]; };// anonymous structure->구조체 안에 구조체가 있는 중첩 상황 but 위의 구조체와 다르게 tag가 없음
+};
 
-int main(){
-    /*struct book *my_books=(struct book*)malloc(sizeof(struct book)*3)->동적 할당을 이용해 메모리 공간 할당 받기
-    if(!my_books)
-        printf("Malloc failed");
-        exit(1);
-    */
-    struct book my_books[3];
-    //복합 리터럴을 사용해 구조체 변수들 초기화
-    my_books[0]=(struct book){"The Great Gatsby", "F.Scott Fitzgerald"};
-    my_books[1]=(struct book){"Hamlet", "William Shakespeare"};
-    my_books[2]=(struct book){"The Odyssey", "Homer"};
+int main()
+{
+	//중첩 구조체의 멤버 초기화
+	struct person ted = { 123, {"Bill", "Gates"} };
+	struct person ted3 = { 125, "Robert", "Hand" };
 
-    print_books(my_books, 3);
+	//일반적인 중첩 구조체에서 멤버 접근 시->멤버 접근 연산자를 2번 이용해서 접근
+	puts(ted.name.first);
+	puts(ted3.name.first);
 
-    return 0;
-}
-//void print_books(const struct book *books, int n){~~}
-void print_books(const struct book books[], int n){
-    for(int i=0; i<n;i++){
-        printf("Book %d: \"%s\" written by \"%s\"\n", i+1, books[i].name,books[i].author);
-    }
+	//익명 구조체의 멤버 초기화(일반 구조체의 초기화와 크게 다르지 않음)
+	struct person2 ted2 = { 124, {"Steve", "wozniak"} };
+	//struct person2 ted2 = { 124, "Steve", "wozniak" };// also works
+
+	//익명 구조체의 경우 중첩된 경우라도 멤버 접근 연산자를 한 번만 사용해서 접근이 가능하다.
+	puts(ted2.first);
+
+	return 0;
 }

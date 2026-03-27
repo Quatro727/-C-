@@ -12,9 +12,9 @@ char *s_gets(char *st, int n){
 
     ret_val=fgets(st, n, stdin);
     if(ret_val){
-        find=strchr(st, '\n');//look for newline
-        if(find)
-            *find='\0';
+        find=strchr(st, '\n');
+        if(find)              
+            *find='\0';       
         else
             while(getchar()!='\n')
                 continue;
@@ -27,6 +27,7 @@ struct book{
     float price;
 };
 int main(){
+    //구조체의 배열
     struct book library[MAX_BOOKS]={{"Empty", "Empty",0.0f},};
 
     int count=0;

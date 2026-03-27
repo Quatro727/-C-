@@ -38,7 +38,7 @@ int main(){
     princess.age=18;
     princess.height=160.0f;
 
-    //Designated Initializer
+    //Designated Initializer:멤버를 직접 지정해서 초기화를 진행(초기화 시 순서 대응할 필요 X)
     struct person beauty={
         .age=19,
         .name="Bell",
@@ -74,6 +74,8 @@ int main(){
     typedef struct person my_person;
 
     my_person p3;
+    //typedef를 이용해서 struct person의 형식을 가진 my_person이란ㄴ 새로운 자료형을 재정의
+    //그리고 이를 이용해 변수 p3를 선언
 
     typedef struct person person;
 
@@ -82,7 +84,7 @@ int main(){
     typedef struct{
         char name[MAX];
         char hobby[MAX];
-    } friend;
+    } friend;//typedef를 잉ㅇ해 해당 구조체의 형식을 가진 새로운 자료형 friend 재정의
 
     friend f4;
 

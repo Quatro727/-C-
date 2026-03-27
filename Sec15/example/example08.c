@@ -49,7 +49,7 @@ int main()
 
 	return 0;
 }
-
+//정보 입력 
 void getinfo(struct namect* pst)
 {
 	int flag;
@@ -57,7 +57,7 @@ void getinfo(struct namect* pst)
 
 	printf("Please enter your first name.\n");
 	//s_gets(pst->fname, NLEN);
-	flag = scanf("%[^\n]%*c", temp);
+	flag = scanf("%[^\n]%*c", temp);//[^\n]:줄바꿈 문자가 아닌 모든 문자를 읽어라, %*c:엔터를 쳤을 때 입력 버퍼에 남은 \n을 지워주는 역할
 	if (flag != 1)
 		printf("Wrong input");//TODO: receive input again
 	else
@@ -83,19 +83,19 @@ void getinfo(struct namect* pst)
 			printf("Malloc() failed");
 	}
 }
-
+//할당된 메모리 반납
 void cleanup(struct namect* pst)
 {
 	free(pst->fname);
 	free(pst->lname);
 }
-
+//입력된 정보를 바탕으로 계산
 void makeinfo(struct namect* pst)
 {
 	pst->letters = (int)strlen(pst->fname) + (int)strlen(pst->lname); // use size_t letters if you don't want to cast
 	//pst->letters = strlen(pst->fname) + strlen(pst->lname);
 }
-
+//결과값 출력
 void showinfo(const struct namect* pst)
 {
 	printf("%s %s, your name contains %d letters.\n",

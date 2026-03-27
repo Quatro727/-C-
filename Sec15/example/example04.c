@@ -20,6 +20,7 @@ struct reservation{
     int minutes;
 };
 int main(){
+    //구조체 멤버를 직접 지정해서 초기화 진행
     struct reservation res={
         .guest={"Nick", "Carraway"},
         .host={"Jay", "Gatsby"},

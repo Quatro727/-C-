@@ -11,7 +11,7 @@ struct fortune{
     double fund_invest;
 };
 
-double sum(double, double);
+double sum(struct fortune *my_fortune);
 
 int main(){
     struct fortune my_fortune={
@@ -20,9 +20,9 @@ int main(){
         "JPMorgan Chase",
         8543.94
     };
-    printf("Total: $%.2f.\n", sum(my_fortune.bank_saving, my_fortune.fund_invest));
+    printf("Total: $%.2f.\n", sum(&my_fortune));
     return 0;
 }
-double sum(double x, double y){
-    return x+y;
+double sum(struct fortune *mf){
+    return mf->bank_saving+mf->fund_invest;
 }
